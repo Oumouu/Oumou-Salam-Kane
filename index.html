@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oumou Salam KANE — Data Analyst</title>
+  <meta name="description" content="Portfolio professionnel d'Oumou Salam KANE, Data Analyst spécialisée en Business Intelligence, Python, Power BI et Machine Learning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #f5f5f7;
+      --color-white: #ffffff;
+      --color-text: #1d1d1f;
+      --color-text-secondary: #6e6e73;
+      --color-accent: #0071e3;
+      --color-accent-hover: #0077ed;
+      --color-border: #d2d2d7;
+      --color-card: #ffffff;
+      --color-section-alt: #fbfbfd;
+      --color-tag: #e8f0fe;
+      --color-tag-text: #1a56db;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius: 18px;
+      --radius-sm: 10px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.07);
+      --shadow-hover: 0 8px 40px rgba(0,0,0,0.13);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --nav-height: 64px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+    p {
+      color: var(--color-text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover { color: var(--color-accent-hover); }
+
+    /* ============================================================
+       LAYOUT UTILITIES
+    ============================================================ */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-alt {
+      background-color: var(--color-section-alt);
+    }
+
+    .section-white {
+      background-color: var(--color-white);
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin-bottom: 60px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-center .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 980px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--color-accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-accent-hover);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,113,227,0.3);
+    }
+
+    .btn-secondary {
+      background-color: rgba(0,113,227,0.08);
+      color: var(--color-accent);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(0,113,227,0.15);
+      color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-text);
+      border: 1.5px solid var(--color-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       TAGS
+    ============================================================ */
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 980px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      background-color: var(--color-tag);
+      color: var(--color-tag-text);
+      margin: 3px;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(245, 245, 247, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(210, 210, 215, 0.5);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .navbar-brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: -0.01em;
+    }
+
+    .navbar-brand span {
+      color: var(--color-accent);
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .navbar-menu a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: var(--transition);
+    }
+
+    .navbar-menu a:hover {
+      color: var(--color-text);
+    }
+
+    /* Language switcher */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0,0,0,0.04);
+      border-radius: 980px;
+      padding: 4px 6px;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 980px;
+      border: none;
+      background: transparent;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lang-btn.active {
+      background: var(--color-white);
+      color: var(--color-text);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .lang-btn img {
+      width: 16px;
+      height: 12px;
+      border-radius: 2px;
+      object-fit: cover;
+    }
+
+    /* Hamburger */
+    .navbar-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .navbar-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, #ffffff 0%, #f0f4ff 50%, #f5f5f7 100%);
+      padding-top: var(--nav-height);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,113,227,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0,113,227,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,113,227,0.08);
+      color: var(--color-accent);
+      padding: 6px 16px;
+      border-radius: 980px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .hero-title {
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .hero-title .highlight {
+      color: var(--color-accent);
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: -0.03em;
+    }
+
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-visual-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+    }
+
+    .hero-visual-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: calc(var(--radius) + 1px);
+      background: linear-gradient(135deg, rgba(0,113,227,0.15), transparent, rgba(0,113,227,0.05));
+      z-index: -1;
+    }
+
+    .data-viz {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .data-viz-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .data-bar-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .data-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .data-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    .data-bar-track {
+      height: 6px;
+      background: #f0f0f5;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .data-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--color-accent), #5ac8fa);
+      animation: barGrow 1.5s ease forwards;
+      transform-origin: left;
+    }
+
+    @keyframes barGrow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    .data-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .data-metric {
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .data-metric-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: -0.02em;
+    }
+
+    .data-metric-label {
+      font-size: 0.7rem;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       ABOUT SECTION
+    ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-identity {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: calc(var(--nav-height) + 24px);
+    }
+
+    .osk-circle {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8f0fe 0%, #f0f4ff 50%, #e8f0fe 100%);
+      border: 2px solid rgba(0,113,227,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0,113,227,0.1);
+      position: relative;
+    }
+
+    .osk-circle::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,113,227,0.1);
+    }
+
+    .osk-initials {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: -0.03em;
+    }
+
+    .osk-subtitle {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .about-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      text-align: center;
+    }
+
+    .about-role {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      text-align: center;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .about-link {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--color-bg);
+      border: 1.5px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .about-link:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: rgba(0,113,227,0.05);
+      transform: translateY(-2px);
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .pillar-card {
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+      padding: 20px 16px;
+      text-align: center;
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+    }
+
+    .pillar-card:hover {
+      border-color: rgba(0,113,227,0.2);
+      background: rgba(0,113,227,0.03);
+      transform: translateY(-3px);
+    }
+
+    .pillar-icon {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .pillar-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .pillar-desc {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--color-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .about-stat {
+      background: var(--color-white);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .about-stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: -0.03em;
+      display: block;
+    }
+
+    .about-stat-label {
+      font-size: 0.72rem;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       EXPERIENCE SECTION
+    ============================================================ */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
+      border-radius: 1px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-white);
+      border: 2.5px solid var(--color-accent);
+      box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
+    }
+
+    .timeline-dot.current {
+      background: var(--color-accent);
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(0,113,227,0.1); }
+      50% { box-shadow: 0 0 0 8px rgba(0,113,227,0.05); }
+    }
+
+    .timeline-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+    }
+
+    .timeline-card:hover {
+      border-color: rgba(0,113,227,0.15);
+      box-shadow: var(--shadow-hover);
+      transform: translateX(4px);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-company {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .timeline-period {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: rgba(0,113,227,0.08);
+      padding: 3px 10px;
+      border-radius: 980px;
+      white-space: nowrap;
+    }
+
+    .timeline-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .timeline-location {
+      font-size: 0.78rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    /* ============================================================
+       CAROUSEL LOGOS
+    ============================================================ */
+    .carousel-section {
+      background: var(--color-white);
+      padding: 48px 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      overflow: hidden;
+    }
+
+    .carousel-label {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .carousel-track-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track-wrapper::before,
+    .carousel-track-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .carousel-track-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, white, transparent);
+    }
+
+    .carousel-track-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, white, transparent);
+    }
+
+    .carousel-track {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      animation: scrollLogos 20s linear infinite;
+      width: max-content;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollLogos {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .carousel-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      flex-shrink: 0;
+      filter: grayscale(30%);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .carousel-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    .carousel-logo img {
+      height: 44px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+    }
+
+    /* ============================================================
+       RESPONSIVE — PARTIE 1
+    ============================================================ */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-visual-card {
+        max-width: 100%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-identity {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .about-pillars {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .navbar-menu {
+        display: none;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: rgba(245,245,247,0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .navbar-menu.open {
+        display: flex;
+      }
+
+      .navbar-toggle {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 70px 0; }
+      .hero-cta { flex-direction: column; }
+      .hero-stats { gap: 20px; }
+      .about-pillars { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#accueil" class="navbar-brand">OSK <span>·</span> Data</a>
+
+      <ul class="navbar-menu" id="navMenu">
+        <li><a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a></li>
+        <li><a href="#apropos" data-fr="À propos" data-en="About">À propos</a></li>
+        <li><a href="#experiences" data-fr="Expériences" data-en="Experience">Expériences</a></li>
+        <li><a href="#competences" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+        <li><a href="#projets" data-fr="Projets" data-en="Projects">Projets</a></li>
+        <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+      </ul>
+
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">
+            <img src="https://flagcdn.com/fr.svg" alt="FR" /> FR
+          </button>
+          <button class="lang-btn" id="btnEN" onclick="setLang('en')">
+            <img src="https://flagcdn.com/gb.svg" alt="EN" /> EN
+          </button>
+        </div>
+        <button class="navbar-toggle" id="navToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="accueil">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge" data-fr="Disponible · Alternance Orange" data-en="Available · Orange Apprenticeship">
+            Disponible · Alternance Orange
+          </div>
+          <h1 class="hero-title">
+            <span data-fr="Je transforme vos données en" data-en="I turn your data into">Je transforme vos données en</span><br />
+            <span class="highlight" data-fr="décisions." data-en="decisions.">décisions.</span>
+          </h1>
+          <p class="hero-tagline" data-fr="Data Analyst · Business Intelligence · Machine Learning" data-en="Data Analyst · Business Intelligence · Machine Learning">
+            Data Analyst · Business Intelligence · Machine Learning
+          </p>
+          <p class="hero-description" data-fr="Maîtrisant l'intégralité de la chaîne de la donnée — de la modélisation SQL à la mise en production de modèles prédictifs — j'accompagne les organisations avec une approche à la fois technique et orientée métier." data-en="Mastering the full data pipeline — from SQL modeling to deploying predictive models — I support organizations with both a technical and business-oriented approach.">
+            Maîtrisant l'intégralité de la chaîne de la donnée — de la modélisation SQL à la mise en production de modèles prédictifs — j'accompagne les organisations avec une approche à la fois technique et orientée métier.
+          </p>
+          <div class="hero-cta">
+            <a href="#projets" class="btn btn-primary">
+              <i class="fas fa-chart-bar"></i>
+              <span data-fr="Voir mes projets" data-en="View my projects">Voir mes projets</span>
+            </a>
+            <a href="CV_OumouSalamKANE.pdf" download class="btn btn-secondary" style="justify-content:center;">
+              <i class="fas fa-download"></i>
+              <span data-fr="Télécharger mon CV" data-en="Download my CV">Télécharger mon CV</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fas fa-envelope"></i>
+              <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number">5</span>
+              <span class="hero-stat-label" data-fr="Projets data" data-en="Data projects">Projets data</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">7</span>
+              <span class="hero-stat-label" data-fr="Secteurs métier" data-en="Business sectors">Secteurs métier</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">6+</span>
+              <span class="hero-stat-label" data-fr="Outils maîtrisés" data-en="Tools mastered">Outils maîtrisés</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">99,3%</span>
+              <span class="hero-stat-label" data-fr="Précision ML" data-en="ML accuracy">Précision ML</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Card -->
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <div class="data-viz">
+              <span class="data-viz-title" data-fr="Compétences clés" data-en="Key skills">Compétences clés</span>
+              <div class="data-bar-group">
+                <div class="data-bar-item">
+                  <div class="data-bar-label">
+                    <span>Python & SQL</span><span>95%</span>
+                  </div>
+                  <div class="data-bar-track">
+                    <div class="data-bar-fill" style="width:95%"></div>
+                  </div>
+                </div>
+                <div class="data-bar-item">
+                  <div class="data-bar-label">
+                    <span>Power BI</span><span>90%</span>
+                  </div>
+                  <div class="data-bar-track">
+                    <div class="data-bar-fill" style="width:90%"></div>
+                  </div>
+                </div>
+                <div class="data-bar-item">
+                  <div class="data-bar-label">
+                    <span>Machine Learning</span><span>85%</span>
+                  </div>
+                  <div class="data-bar-track">
+                    <div class="data-bar-fill" style="width:85%"></div>
+                  </div>
+                </div>
+                <div class="data-bar-item">
+                  <div class="data-bar-label">
+                    <span>Cloud & Data Eng.</span><span>80%</span>
+                  </div>
+                  <div class="data-bar-track">
+                    <div class="data-bar-fill" style="width:80%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="data-metrics">
+                <div class="data-metric">
+                  <div class="data-metric-value">AUC</div>
+                  <div class="data-metric-label">1.000</div>
+                </div>
+                <div class="data-metric">
+                  <div class="data-metric-value">99,3%</div>
+                  <div class="data-metric-label" data-fr="Précision" data-en="Accuracy">Précision</div>
+                </div>
+                <div class="data-metric">
+                  <div class="data-metric-value">57M</div>
+                  <div class="data-metric-label" data-fr="Coûts analysés" data-en="Costs analyzed">Coûts analysés</div>
+                </div>
+                <div class="data-metric">
+                  <div class="data-metric-value">535M</div>
+                  <div class="data-metric-label" data-fr="Personnes étudiées" data-en="People studied">Personnes étudiées</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CAROUSEL LOGOS
+  ============================================================ -->
+  <div class="carousel-section">
+    <div class="carousel-label" data-fr="Entreprises & organisations" data-en="Companies & organizations">
+      Entreprises & organisations
+    </div>
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Set 1 -->
+        <div class="carousel-logo">
+          <img src="assets/logos/orange.png" alt="Orange" />
+        </div>
+        <div class="carousel-logo">
+          <img src="assets/logos/pole-emploi.jpg" alt="Pôle Emploi" />
+        </div>
+        <div class="carousel-logo">
+          <img src="assets/logos/FP.png" alt="Ministère Fonction Publique" />
+        </div>
+        <div class="carousel-logo">
+          <img src="assets/logos/intelcia.jpg" alt="Intelcia" />
+        </div>
+        <!-- Set 2 (duplicate for infinite scroll) -->
+        <div class="carousel-logo">
+          <img src="assets/logos/orange.png" alt="Orange" />
+        </div>
+        <div class="carousel-logo">
+          <img src="assets/logos/pole-emploi.jpg" alt="Pôle Emploi" />
+        </div>
+        <div class="carousel-logo">
+          <img src="assets/logos/FP.png" alt="Ministère Fonction Publique" />
+        </div>
+        <div class="carousel-logo">
+          <img src="assets/logos/intelcia.jpg" alt="Intelcia" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       À PROPOS
+  ============================================================ -->
+  <section class="section section-white" id="apropos">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Identité visuelle -->
+        <div class="about-identity">
+          <div class="osk-circle">
+            <span class="osk-initials">OSK</span>
+            <span class="osk-subtitle">Data · BI · ML</span>
+          </div>
+          <div style="text-align:center;">
+            <div class="about-name">Oumou Salam KANE</div>
+            <div class="about-role" data-fr="Data Analyst · Orange France" data-en="Data Analyst · Orange France">
+              Data Analyst · Orange France
+            </div>
+          </div>
+          <div class="about-links">
+            <a href="https://www.linkedin.com/in/oumou-salam-kane-b159101b4/" target="_blank" class="about-link" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Oumouu" target="_blank" class="about-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:salamoumou097@gmail.com" class="about-link" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="about-content">
+          <div>
+            <span class="section-label" data-fr="À propos" data-en="About">À propos</span>
+            <h2 class="section-title" data-fr="Une data analyst qui parle le langage de vos métiers." data-en="A data analyst who speaks your business language.">
+              Une data analyst qui parle le langage de vos métiers.
+            </h2>
+          </div>
+
+          <div class="about-text">
+            <p data-fr="Diplômée d'un Master en Business Intelligence & Big Data et d'une formation Data Analyst au CFA Orange en partenariat avec OpenClassrooms, je maîtrise l'intégralité de la chaîne de valorisation de la donnée : collecte, modélisation, analyse, visualisation et mise en production." data-en="Holding a Master's degree in Business Intelligence & Big Data and a Data Analyst certification from CFA Orange in partnership with OpenClassrooms, I master the full data value chain: collection, modeling, analysis, visualization and deployment.">
+              Diplômée d'un Master en Business Intelligence & Big Data et d'une formation Data Analyst au CFA Orange en partenariat avec OpenClassrooms, je maîtrise l'intégralité de la chaîne de valorisation de la donnée : collecte, modélisation, analyse, visualisation et mise en production.
+            </p>
+            <p data-fr="Mon parcours, entre le Sénégal et la France, m'a confrontée à des environnements variés — secteur public, entrepreneuriat, centre de relation client, grand groupe international — ce qui m'a permis de développer une adaptabilité rare et une compréhension fine des enjeux métier dans de nombreux secteurs." data-en="My journey, between Senegal and France, has exposed me to varied environments — public sector, entrepreneurship, customer relations, large international group — allowing me to develop rare adaptability and a deep understanding of business challenges across many sectors.">
+              Mon parcours, entre le Sénégal et la France, m'a confrontée à des environnements variés — secteur public, entrepreneuriat, centre de relation client, grand groupe international — ce qui m'a permis de développer une adaptabilité rare et une compréhension fine des enjeux métier dans de nombreux secteurs.
+            </p>
+            <p data-fr="Curieuse, rigoureuse et passionnée par la donnée et l'intelligence artificielle, je m'engage à produire des analyses claires, des visualisations impactantes et des recommandations actionnables." data-en="Curious, rigorous and passionate about data and artificial intelligence, I am committed to delivering clear analyses, impactful visualizations and actionable recommendations.">
+              Curieuse, rigoureuse et passionnée par la donnée et l'intelligence artificielle, je m'engage à produire des analyses claires, des visualisations impactantes et des recommandations actionnables.
+            </p>
+          </div>
+
+          <!-- 3 Piliers -->
+          <div class="about-pillars">
+            <div class="pillar-card">
+              <div class="pillar-icon">⚙️</div>
+              <div class="pillar-title" data-fr="Technique" data-en="Technical">Technique</div>
+              <div class="pillar-desc" data-fr="Python · SQL · Power BI · Machine Learning · Cloud GCP · Snowflake" data-en="Python · SQL · Power BI · Machine Learning · Cloud GCP · Snowflake">
+                Python · SQL · Power BI · Machine Learning · Cloud GCP · Snowflake
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🏢</div>
+              <div class="pillar-title" data-fr="Métier" data-en="Business">Métier</div>
+              <div class="pillar-desc" data-fr="7 secteurs · Télécoms · Immobilier · E-commerce · Santé · Finance" data-en="7 sectors · Telecoms · Real estate · E-commerce · Health · Finance">
+                7 secteurs · Télécoms · Immobilier · E-commerce · Santé · Finance
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🤝</div>
+              <div class="pillar-title" data-fr="Humain" data-en="Human">Humain</div>
+              <div class="pillar-desc" data-fr="Adaptabilité · Storytelling · Rigueur · Communication · Esprit d'équipe" data-en="Adaptability · Storytelling · Rigor · Communication · Team spirit">
+                Adaptabilité · Storytelling · Rigueur · Communication · Esprit d'équipe
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="about-stat-number">5</span>
+              <span class="about-stat-label" data-fr="Projets data" data-en="Data projects">Projets data</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-number">6+</span>
+              <span class="about-stat-label" data-fr="Outils maîtrisés" data-en="Tools mastered">Outils maîtrisés</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-number">4</span>
+              <span class="about-stat-label" data-fr="Ans d'expérience" data-en="Years of experience">Ans d'expérience</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-number">7</span>
+              <span class="about-stat-label" data-fr="Secteurs couverts" data-en="Sectors covered">Secteurs couverts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPÉRIENCES
+  ============================================================ -->
+  <section class="section section-alt" id="experiences">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" data-fr="Parcours professionnel" data-en="Professional journey">Parcours professionnel</span>
+        <h2 class="section-title" data-fr="Expériences" data-en="Experience">Expériences</h2>
+        <p class="section-subtitle" data-fr="Un parcours riche, entre la France et le Sénégal, dans des environnements variés et exigeants." data-en="A rich journey, between France and Senegal, in varied and demanding environments.">
+          Un parcours riche, entre la France et le Sénégal, dans des environnements variés et exigeants.
+        </p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Orange -->
+        <div class="timeline-item">
+          <div class="timeline-dot current"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company">Orange France</span>
+              <span class="timeline-period" data-fr="Sept. 2024 – Présent" data-en="Sept. 2024 – Present">Sept. 2024 – Présent</span>
+            </div>
+            <div class="timeline-role" data-fr="Data Analyst — Alternance | Département Déploiement Mobile" data-en="Data Analyst — Apprenticeship | Mobile Deployment Department">
+              Data Analyst — Alternance | Département Déploiement Mobile
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt" style="font-size:0.7rem;"></i>
+              <span data-fr="Châtillon (92), Île-de-France" data-en="Châtillon (92), Île-de-France">Châtillon (92), Île-de-France</span>
+            </div>
+            <p class="timeline-desc" data-fr="Conception de tableaux de bord Power BI pour le pilotage des sites réseau 4G/5G (sites neufs et réaménagements). Automatisation de processus métier via Python : remplacement de macros Excel, envoi automatique de rapports hebdomadaires. Exploitation et lecture de la base de données entreprise." data-en="Design of Power BI dashboards for monitoring 4G/5G network sites (new sites and upgrades). Business process automation via Python: replacing Excel macros, automatic weekly report sending. Exploitation and reading of the company database.">
+              Conception de tableaux de bord Power BI pour le pilotage des sites réseau 4G/5G (sites neufs et réaménagements). Automatisation de processus métier via Python : remplacement de macros Excel, envoi automatique de rapports hebdomadaires. Exploitation et lecture de la base de données entreprise.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Automatisation</span>
+              <span class="tag">4G/5G</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pôle Emploi -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company" data-fr="Pôle Emploi & Entrepreneuriat" data-en="Pôle Emploi & Entrepreneurship">Pôle Emploi & Entrepreneuriat</span>
+              <span class="timeline-period" data-fr="Oct. 2021 – Mars 2023" data-en="Oct. 2021 – Mar. 2023">Oct. 2021 – Mars 2023</span>
+            </div>
+            <div class="timeline-role" data-fr="Consultante Technique & Gestion de données" data-en="Technical Consultant & Data Management">
+              Consultante Technique & Gestion de données
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt" style="font-size:0.7rem;"></i>
+              <span>Dakar, Sénégal</span>
+            </div>
+            <p class="timeline-desc" data-fr="Accompagnement de jeunes diplômés dans leur orientation professionnelle. Gestion de bases de données et conception de tableaux de bord Power BI pour le suivi des activités et des indicateurs de performance." data-en="Supporting young graduates in their career orientation. Database management and Power BI dashboard design for activity tracking and performance indicators.">
+              Accompagnement de jeunes diplômés dans leur orientation professionnelle. Gestion de bases de données et conception de tableaux de bord Power BI pour le suivi des activités et des indicateurs de performance.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Power BI</span>
+              <span class="tag">Bases de données</span>
+              <span class="tag">Conseil</span>
+              <span class="tag">Orientation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ministère -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company" data-fr="Ministère de la Fonction Publique" data-en="Ministry of Civil Service">Ministère de la Fonction Publique</span>
+              <span class="timeline-period" data-fr="Mai – Nov. 2019" data-en="May – Nov. 2019">Mai – Nov. 2019</span>
+            </div>
+            <div class="timeline-role" data-fr="Stagiaire — Développement Informatique" data-en="Intern — Software Development">
+              Stagiaire — Développement Informatique
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt" style="font-size:0.7rem;"></i>
+              <span>Dakar, Sénégal</span>
+            </div>
+            <p class="timeline-desc" data-fr="Développement front-end sur la plateforme du Fichier Unifié des Données Personnelles de l'État (FUDPE). Contribution à la modernisation des outils numériques du secteur public sénégalais." data-en="Front-end development on the Unified Personal Data File platform (FUDPE). Contribution to the digitalization of Senegalese public sector tools.">
+              Développement front-end sur la plateforme du Fichier Unifié des Données Personnelles de l'État (FUDPE). Contribution à la modernisation des outils numériques du secteur public sénégalais.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Développement Front-end</span>
+              <span class="tag">Secteur public</span>
+              <span class="tag">FUDPE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intelcia -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company">Intelcia / Campagne SFR</span>
+              <span class="timeline-period" data-fr="Mars – Nov. 2018" data-en="Mar. – Nov. 2018">Mars – Nov. 2018</span>
+            </div>
+            <div class="timeline-role" data-fr="Conseillère Client Technique" data-en="Technical Customer Advisor">
+              Conseillère Client Technique
+            </div>
+            <div class="timeline-location">
+              <i class="fas fa-map-marker-alt" style="font-size:0.7rem;"></i>
+              <span>Dakar, Sénégal</span>
+            </div>
+            <p class="timeline-desc" data-fr="Support technique, traitement d'incidents, assistance clientèle et service après-vente dans le cadre de la campagne SFR. Première expérience dans l'univers des télécommunications." data-en="Technical support, incident handling, customer assistance and after-sales service for the SFR campaign. First experience in the telecommunications industry.">
+              Support technique, traitement d'incidents, assistance clientèle et service après-vente dans le cadre de la campagne SFR. Première expérience dans l'univers des télécommunications.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Support technique</span>
+              <span class="tag">Télécoms</span>
+              <span class="tag">Relation client</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+    <!-- ============================================================
+       COMPÉTENCES & OUTILS
+  ============================================================ -->
+  <section class="section section-white" id="competences">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" data-fr="Expertise technique" data-en="Technical expertise">Expertise technique</span>
+        <h2 class="section-title" data-fr="Compétences & Outils" data-en="Skills & Tools">Compétences & Outils</h2>
+        <p class="section-subtitle" data-fr="Une maîtrise complète de la chaîne de la donnée, des langages de programmation aux outils de visualisation et de machine learning." data-en="Complete mastery of the data pipeline, from programming languages to visualization and machine learning tools.">
+          Une maîtrise complète de la chaîne de la donnée, des langages de programmation aux outils de visualisation et de machine learning.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🐍</div>
+            <h3 class="skill-category-title" data-fr="Langages & Data" data-en="Languages & Data">Langages & Data</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-primary">Python</span>
+            <span class="skill-tag skill-tag-primary">SQL</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">📊</div>
+            <h3 class="skill-category-title" data-fr="Visualisation & BI" data-en="Visualization & BI">Visualisation & BI</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-primary">Power BI</span>
+            <span class="skill-tag skill-tag-primary">DAX</span>
+            <span class="skill-tag">Tableau Public</span>
+            <span class="skill-tag">Looker Studio</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">Modélisation en étoile</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">☁️</div>
+            <h3 class="skill-category-title" data-fr="Data Engineering & Cloud" data-en="Data Engineering & Cloud">Data Engineering & Cloud</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-primary">Snowflake</span>
+            <span class="skill-tag skill-tag-primary">GCP / BigQuery</span>
+            <span class="skill-tag">dbt</span>
+            <span class="skill-tag">GitLab</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🤖</div>
+            <h3 class="skill-category-title" data-fr="Machine Learning & IA" data-en="Machine Learning & AI">Machine Learning & IA</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-primary">Scikit-learn</span>
+            <span class="skill-tag skill-tag-primary">Régression logistique</span>
+            <span class="skill-tag">Random Forest</span>
+            <span class="skill-tag">KNN</span>
+            <span class="skill-tag">K-means</span>
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">IA Générative</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">📋</div>
+            <h3 class="skill-category-title" data-fr="Méthodologies" data-en="Methodologies">Méthodologies</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-primary">Agile / Scrum</span>
+            <span class="skill-tag">RGPD</span>
+            <span class="skill-tag">EDA</span>
+            <span class="skill-tag">Data Storytelling</span>
+            <span class="skill-tag">Tests statistiques</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🌍</div>
+            <h3 class="skill-category-title" data-fr="Langues" data-en="Languages">Langues</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-tag-primary">Français — Natif</span>
+            <span class="skill-tag skill-tag-primary">Anglais — Professionnel</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJETS
+  ============================================================ -->
+  <section class="section section-alt" id="projets">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" data-fr="Réalisations" data-en="Achievements">Réalisations</span>
+        <h2 class="section-title" data-fr="Projets Data" data-en="Data Projects">Projets Data</h2>
+        <p class="section-subtitle" data-fr="Cinq projets documentés, couvrant des secteurs variés, avec des résultats mesurables et des livrables concrets." data-en="Five documented projects, covering various sectors, with measurable results and concrete deliverables.">
+          Cinq projets documentés, couvrant des secteurs variés, avec des résultats mesurables et des livrables concrets.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Projet 1 -->
+        <div class="project-card" onclick="openModal('modal1')">
+          <div class="project-card-header">
+            <div class="project-icon">🌍</div>
+            <span class="project-sector" data-fr="Santé publique mondiale" data-en="Global public health">Santé publique mondiale</span>
+          </div>
+          <h3 class="project-title" data-fr="Étude de la sous-nutrition mondiale" data-en="Global malnutrition study">Étude de la sous-nutrition mondiale</h3>
+          <p class="project-client">FAO — Nations Unies</p>
+          <p class="project-desc" data-fr="Analyse de la sous-nutrition mondiale en 2017 : quantification du paradoxe alimentaire, cartographie des pays prioritaires, étude du cas Thaïlande." data-en="Analysis of global malnutrition in 2017: quantification of the food paradox, mapping of priority countries, Thailand case study.">
+            Analyse de la sous-nutrition mondiale en 2017 : quantification du paradoxe alimentaire, cartographie des pays prioritaires, étude du cas Thaïlande.
+          </p>
+          <div class="project-result">
+            <i class="fas fa-chart-line"></i>
+            <span data-fr="535,7M de personnes sous-alimentées identifiées" data-en="535.7M undernourished people identified">535,7M de personnes sous-alimentées identifiées</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">EDA</span>
+          </div>
+          <div class="project-cta">
+            <span data-fr="Voir le détail" data-en="View details">Voir le détail</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- Projet 2 -->
+        <div class="project-card project-card-featured" onclick="openModal('modal2')">
+          <div class="project-card-header">
+            <div class="project-icon">📊</div>
+            <span class="project-sector" data-fr="Pilotage de projets" data-en="Project management">Pilotage de projets</span>
+          </div>
+          <h3 class="project-title" data-fr="Dashboard de pilotage international" data-en="International management dashboard">Dashboard de pilotage international</h3>
+          <p class="project-client">Sanitoral — Groupe international</p>
+          <p class="project-desc" data-fr="Outil de pilotage complet (coûts, délais, livrables) pour un groupe international de soins bucco-dentaires. 6 tables modélisées, mesures DAX, segments synchronisés." data-en="Complete management tool (costs, deadlines, deliverables) for an international dental care group. 6 modeled tables, DAX measures, synchronized slicers.">
+            Outil de pilotage complet (coûts, délais, livrables) pour un groupe international de soins bucco-dentaires. 6 tables modélisées, mesures DAX, segments synchronisés.
+          </p>
+          <div class="project-result">
+            <i class="fas fa-chart-line"></i>
+            <span data-fr="58,89% des projets en dérive détectés automatiquement" data-en="58.89% of drifting projects detected automatically">58,89% des projets en dérive détectés automatiquement</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Modélisation étoile</span>
+            <span class="tag">Q&A</span>
+          </div>
+          <div class="project-cta">
+            <span data-fr="Voir le détail" data-en="View details">Voir le détail</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- Projet 3 -->
+        <div class="project-card" onclick="openModal('modal3')">
+          <div class="project-card-header">
+            <div class="project-icon">🛒</div>
+            <span class="project-sector" data-fr="E-commerce & Retail" data-en="E-commerce & Retail">E-commerce & Retail</span>
+          </div>
+          <h3 class="project-title" data-fr="Analyse des ventes en ligne" data-en="Online sales analysis">Analyse des ventes en ligne</h3>
+          <p class="project-client">Librairie Lapage</p>
+          <p class="project-desc" data-fr="Analyse de 2 ans de données e-commerce : KPIs, profils clients, tests statistiques rigoureux. Loi de Pareto vérifiée sur les ventes." data-en="Analysis of 2 years of e-commerce data: KPIs, customer profiles, rigorous statistical tests. Pareto law verified on sales.">
+            Analyse de 2 ans de données e-commerce : KPIs, profils clients, tests statistiques rigoureux. Loi de Pareto vérifiée sur les ventes.
+          </p>
+          <div class="project-result">
+            <i class="fas fa-chart-line"></i>
+            <span data-fr="Loi de Pareto vérifiée — leviers de fidélisation identifiés" data-en="Pareto law verified — retention levers identified">Loi de Pareto vérifiée — leviers de fidélisation identifiés</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Tests statistiques</span>
+            <span class="tag">Chi-2</span>
+            <span class="tag">Spearman</span>
+          </div>
+          <div class="project-cta">
+            <span data-fr="Voir le détail" data-en="View details">Voir le détail</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- Projet 4 -->
+        <div class="project-card" onclick="openModal('modal4')">
+          <div class="project-card-header">
+            <div class="project-icon">🏠</div>
+            <span class="project-sector" data-fr="Immobilier" data-en="Real estate">Immobilier</span>
+          </div>
+          <h3 class="project-title" data-fr="Base de données immobilière" data-en="Real estate database">Base de données immobilière</h3>
+          <p class="project-client">Laplace Immo</p>
+          <p class="project-desc" data-fr="Conception d'une base relationnelle normalisée (DVF, INSEE, data.gouv), 12 requêtes d'analyse du marché, conformité RGPD intégrée dès la conception." data-en="Design of a normalized relational database (DVF, INSEE, data.gouv), 12 market analysis queries, GDPR compliance built-in from design.">
+            Conception d'une base relationnelle normalisée (DVF, INSEE, data.gouv), 12 requêtes d'analyse du marché, conformité RGPD intégrée dès la conception.
+          </p>
+          <div class="project-result">
+            <i class="fas fa-chart-line"></i>
+            <span data-fr="Socle de données opérationnel, documenté et conforme RGPD" data-en="Operational, documented and GDPR-compliant data foundation">Socle de données opérationnel, documenté et conforme RGPD</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Modélisation</span>
+            <span class="tag">RGPD</span>
+            <span class="tag">DVF</span>
+          </div>
+          <div class="project-cta">
+            <span data-fr="Voir le détail" data-en="View details">Voir le détail</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+        <!-- Projet 5 -->
+        <div class="project-card project-card-featured" onclick="openModal('modal5')">
+          <div class="project-card-header">
+            <div class="project-icon">🔍</div>
+            <span class="project-sector" data-fr="Sécurité financière" data-en="Financial security">Sécurité financière</span>
+          </div>
+          <h3 class="project-title" data-fr="Détection de faux billets par ML" data-en="Counterfeit detection via ML">Détection de faux billets par ML</h3>
+          <p class="project-client">ONCFM</p>
+          <p class="project-desc" data-fr="Développement et mise en production d'un algorithme de classification atteignant 99,3% de précision et un AUC de 1,000. Script predict.py sérialisé, utilisable en production." data-en="Development and deployment of a classification algorithm achieving 99.3% accuracy and AUC of 1.000. Serialized predict.py script, production-ready.">
+            Développement et mise en production d'un algorithme de classification atteignant 99,3% de précision et un AUC de 1,000. Script predict.py sérialisé, utilisable en production.
+          </p>
+          <div class="project-result project-result-highlight">
+            <i class="fas fa-trophy"></i>
+            <span data-fr="99,3% de précision · AUC 1,000 · Mis en production" data-en="99.3% accuracy · AUC 1.000 · Production-ready">99,3% de précision · AUC 1,000 · Mis en production</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Régression logistique</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+          <div class="project-cta">
+            <span data-fr="Voir le détail" data-en="View details">Voir le détail</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MODALS PROJETS
+  ============================================================ -->
+  <div class="modal-overlay" id="modal1" onclick="closeModalOutside(event, 'modal1')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal1')"><i class="fas fa-times"></i></button>
+      <div class="modal-icon">🌍</div>
+      <span class="modal-sector" data-fr="Santé publique mondiale" data-en="Global public health">Santé publique mondiale</span>
+      <h3 class="modal-title" data-fr="Étude de la sous-nutrition mondiale" data-en="Global malnutrition study">Étude de la sous-nutrition mondiale</h3>
+      <p class="modal-client">FAO — Nations Unies</p>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 data-fr="Contexte & Objectif" data-en="Context & Objective">Contexte & Objectif</h4>
+          <p data-fr="Dans le cadre d'une mission pour la FAO, j'ai analysé les données mondiales de sous-nutrition de 2017 afin d'identifier les pays prioritaires et de quantifier le paradoxe alimentaire mondial." data-en="As part of a mission for the FAO, I analyzed global malnutrition data from 2017 to identify priority countries and quantify the global food paradox.">
+            Dans le cadre d'une mission pour la FAO, j'ai analysé les données mondiales de sous-nutrition de 2017 afin d'identifier les pays prioritaires et de quantifier le paradoxe alimentaire mondial.
+          </p>
+        </div>
+        <div class="modal-section">
+          <h4 data-fr="Résultats clés" data-en="Key results">Résultats clés</h4>
+          <ul class="modal-list">
+            <li data-fr="535,7 millions de personnes sous-alimentées dans le monde" data-en="535.7 million undernourished people worldwide">535,7 millions de personnes sous-alimentées dans le monde</li>
+            <li data-fr="La planète produit suffisamment pour nourrir 101,7% de sa population" data-en="The planet produces enough to feed 101.7% of its population">La planète produit suffisamment pour nourrir 101,7% de sa population</li>
+            <li data-fr="9,3 milliards de personnes pourraient être nourries avec la production actuelle" data-en="9.3 billion people could be fed with current production">9,3 milliards de personnes pourraient être nourries avec la production actuelle</li>
+            <li data-fr="Cartographie des pays prioritaires et étude approfondie du cas Thaïlande" data-en="Mapping of priority countries and in-depth Thailand case study">Cartographie des pays prioritaires et étude approfondie du cas Thaïlande</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span>
+          <span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+          <span class="tag">EDA</span><span class="tag">Cartographie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal2" onclick="closeModalOutside(event, 'modal2')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal2')"><i class="fas fa-times"></i></button>
+      <div class="modal-icon">📊</div>
+      <span class="modal-sector" data-fr="Pilotage de projets" data-en="Project management">Pilotage de projets</span>
+      <h3 class="modal-title" data-fr="Dashboard de pilotage international" data-en="International management dashboard">Dashboard de pilotage international</h3>
+      <p class="modal-client">Sanitoral — Groupe international</p>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 data-fr="Contexte & Objectif" data-en="Context & Objective">Contexte & Objectif</h4>
+          <p data-fr="Conception d'un outil de pilotage complet pour un groupe international de soins bucco-dentaires, permettant le suivi en temps réel des coûts, délais et livrables sur 4 régions et 40+ pays." data-en="Design of a complete management tool for an international dental care group, enabling real-time tracking of costs, deadlines and deliverables across 4 regions and 40+ countries.">
+            Conception d'un outil de pilotage complet pour un groupe international de soins bucco-dentaires, permettant le suivi en temps réel des coûts, délais et livrables sur 4 régions et 40+ pays.
+          </p>
+        </div>
+        <div class="modal-section">
+          <h4 data-fr="Résultats clés" data-en="Key results">Résultats clés</h4>
+          <ul class="modal-list">
+            <li data-fr="58,89% des projets en dépassement de délai identifiés automatiquement" data-en="58.89% of overdue projects identified automatically">58,89% des projets en dépassement de délai identifiés automatiquement</li>
+            <li data-fr="72,53% des livrables suivis en temps réel" data-en="72.53% of deliverables tracked in real time">72,53% des livrables suivis en temps réel</li>
+            <li data-fr="57M de coûts analysés sur 2 types de projets" data-en="57M in costs analyzed across 2 project types">57M de coûts analysés sur 2 types de projets</li>
+            <li data-fr="6 tables modélisées en schéma étoile, visuel Q&A natif intégré" data-en="6 tables modeled in star schema, native Q&A visual integrated">6 tables modélisées en schéma étoile, visuel Q&A natif intégré</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span>
+          <span class="tag">Modélisation étoile</span><span class="tag">Segments synchronisés</span>
+          <span class="tag">Q&A natif</span><span class="tag">Carte géographique</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal3" onclick="closeModalOutside(event, 'modal3')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal3')"><i class="fas fa-times"></i></button>
+      <div class="modal-icon">🛒</div>
+      <span class="modal-sector" data-fr="E-commerce & Retail" data-en="E-commerce & Retail">E-commerce & Retail</span>
+      <h3 class="modal-title" data-fr="Analyse des ventes en ligne" data-en="Online sales analysis">Analyse des ventes en ligne</h3>
+      <p class="modal-client">Librairie Lapage</p>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 data-fr="Contexte & Objectif" data-en="Context & Objective">Contexte & Objectif</h4>
+          <p data-fr="Analyse de 2 ans de données e-commerce pour identifier les profils clients, les leviers de fidélisation et les catégories de produits les plus performantes." data-en="Analysis of 2 years of e-commerce data to identify customer profiles, retention levers and best-performing product categories.">
+            Analyse de 2 ans de données e-commerce pour identifier les profils clients, les leviers de fidélisation et les catégories de produits les plus performantes.
+          </p>
+        </div>
+        <div class="modal-section">
+          <h4 data-fr="Résultats clés" data-en="Key results">Résultats clés</h4>
+          <ul class="modal-list">
+            <li data-fr="Loi de Pareto vérifiée sur les ventes" data-en="Pareto law verified on sales">Loi de Pareto vérifiée sur les ventes</li>
+            <li data-fr="Tests statistiques rigoureux : Chi-2, Spearman, Kruskal-Wallis, Anderson-Darling" data-en="Rigorous statistical tests: Chi-2, Spearman, Kruskal-Wallis, Anderson-Darling">Tests statistiques rigoureux : Chi-2, Spearman, Kruskal-Wallis, Anderson-Darling</li>
+            <li data-fr="Identification des leviers de fidélisation par âge, genre et catégorie" data-en="Identification of retention levers by age, gender and category">Identification des leviers de fidélisation par âge, genre et catégorie</li>
+            <li data-fr="Recommandations marketing actionnables livrées au client" data-en="Actionable marketing recommendations delivered to client">Recommandations marketing actionnables livrées au client</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="tag">Python</span><span class="tag">Tests statistiques</span>
+          <span class="tag">Chi-2</span><span class="tag">Spearman</span>
+          <span class="tag">Kruskal-Wallis</span><span class="tag">EDA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal4" onclick="closeModalOutside(event, 'modal4')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal4')"><i class="fas fa-times"></i></button>
+      <div class="modal-icon">🏠</div>
+      <span class="modal-sector" data-fr="Immobilier" data-en="Real estate">Immobilier</span>
+      <h3 class="modal-title" data-fr="Base de données immobilière" data-en="Real estate database">Base de données immobilière</h3>
+      <p class="modal-client">Laplace Immo</p>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 data-fr="Contexte & Objectif" data-en="Context & Objective">Contexte & Objectif</h4>
+          <p data-fr="Conception d'une base de données relationnelle normalisée pour analyser le marché immobilier français, en intégrant des sources de données publiques (DVF, INSEE, data.gouv) avec une conformité RGPD native." data-en="Design of a normalized relational database to analyze the French real estate market, integrating public data sources (DVF, INSEE, data.gouv) with native GDPR compliance.">
+            Conception d'une base de données relationnelle normalisée pour analyser le marché immobilier français, en intégrant des sources de données publiques (DVF, INSEE, data.gouv) avec une conformité RGPD native.
+          </p>
+        </div>
+        <div class="modal-section">
+          <h4 data-fr="Résultats clés" data-en="Key results">Résultats clés</h4>
+          <ul class="modal-list">
+            <li data-fr="Base relationnelle normalisée, documentée et opérationnelle" data-en="Normalized, documented and operational relational database">Base relationnelle normalisée, documentée et opérationnelle</li>
+            <li data-fr="12 requêtes SQL d'analyse du marché immobilier" data-en="12 SQL queries for real estate market analysis">12 requêtes SQL d'analyse du marché immobilier</li>
+            <li data-fr="Conformité RGPD intégrée dès la conception" data-en="GDPR compliance built-in from design">Conformité RGPD intégrée dès la conception</li>
+            <li data-fr="Sources : DVF, INSEE, data.gouv.fr" data-en="Sources: DVF, INSEE, data.gouv.fr">Sources : DVF, INSEE, data.gouv.fr</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="tag">SQL</span><span class="tag">Modélisation relationnelle</span>
+          <span class="tag">RGPD</span><span class="tag">DVF</span>
+          <span class="tag">INSEE</span><span class="tag">Normalisation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal5" onclick="closeModalOutside(event, 'modal5')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal5')"><i class="fas fa-times"></i></button>
+      <div class="modal-icon">🔍</div>
+      <span class="modal-sector" data-fr="Sécurité financière" data-en="Financial security">Sécurité financière</span>
+      <h3 class="modal-title" data-fr="Détection de faux billets par ML" data-en="Counterfeit detection via ML">Détection de faux billets par ML</h3>
+      <p class="modal-client">ONCFM</p>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 data-fr="Contexte & Objectif" data-en="Context & Objective">Contexte & Objectif</h4>
+          <p data-fr="Développement d'un algorithme de machine learning pour détecter automatiquement les faux billets de banque, avec mise en production d'un script Python sérialisé utilisable directement par les équipes métier." data-en="Development of a machine learning algorithm to automatically detect counterfeit banknotes, with deployment of a serialized Python script directly usable by business teams.">
+            Développement d'un algorithme de machine learning pour détecter automatiquement les faux billets de banque, avec mise en production d'un script Python sérialisé utilisable directement par les équipes métier.
+          </p>
+        </div>
+        <div class="modal-section">
+          <h4 data-fr="Résultats clés" data-en="Key results">Résultats clés</h4>
+          <ul class="modal-list">
+            <li data-fr="99,3% de précision — 298 billets sur 300 correctement classés" data-en="99.3% accuracy — 298 out of 300 banknotes correctly classified">99,3% de précision — 298 billets sur 300 correctement classés</li>
+            <li data-fr="AUC de 1,000 — discrimination parfaite" data-en="AUC of 1.000 — perfect discrimination">AUC de 1,000 — discrimination parfaite</li>
+            <li data-fr="Modèle retenu : régression logistique (vs KNN, Random Forest)" data-en="Selected model: logistic regression (vs KNN, Random Forest)">Modèle retenu : régression logistique (vs KNN, Random Forest)</li>
+            <li data-fr="Script predict.py sérialisé, mis en production" data-en="Serialized predict.py script, production-deployed">Script predict.py sérialisé, mis en production</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="tag">Python</span><span class="tag">Scikit-learn</span>
+          <span class="tag">Régression logistique</span><span class="tag">Random Forest</span>
+          <span class="tag">KNN</span><span class="tag">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       EXPERTISE MÉTIER
+  ============================================================ -->
+  <section class="section section-white" id="expertise">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" data-fr="Compréhension métier" data-en="Business understanding">Compréhension métier</span>
+        <h2 class="section-title" data-fr="Une data analyst qui comprend vos enjeux" data-en="A data analyst who understands your challenges">Une data analyst qui comprend vos enjeux</h2>
+        <p class="section-subtitle" data-fr="Grâce à la diversité de mes projets et expériences, je maîtrise le vocabulaire et les problématiques de plusieurs secteurs métier." data-en="Thanks to the diversity of my projects and experiences, I master the vocabulary and challenges of several business sectors.">
+          Grâce à la diversité de mes projets et expériences, je maîtrise le vocabulaire et les problématiques de plusieurs secteurs métier.
+        </p>
+      </div>
+      <div class="sectors-grid">
+        <div class="sector-card">
+          <div class="sector-icon">📡</div>
+          <div class="sector-name" data-fr="Télécommunications" data-en="Telecommunications">Télécommunications</div>
+          <div class="sector-context" data-fr="Orange — déploiement 4G/5G, KPIs réseau" data-en="Orange — 4G/5G deployment, network KPIs">Orange — déploiement 4G/5G, KPIs réseau</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">🏥</div>
+          <div class="sector-name" data-fr="Santé publique" data-en="Public health">Santé publique</div>
+          <div class="sector-context" data-fr="FAO — sous-nutrition, disponibilité alimentaire" data-en="FAO — malnutrition, food availability">FAO — sous-nutrition, disponibilité alimentaire</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">🏠</div>
+          <div class="sector-name" data-fr="Immobilier" data-en="Real estate">Immobilier</div>
+          <div class="sector-context" data-fr="Laplace Immo — transactions, prix au m²" data-en="Laplace Immo — transactions, price per m²">Laplace Immo — transactions, prix au m²</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">🛒</div>
+          <div class="sector-name" data-fr="E-commerce & Retail" data-en="E-commerce & Retail">E-commerce & Retail</div>
+          <div class="sector-context" data-fr="Librairie Lapage — ventes, comportement client" data-en="Librairie Lapage — sales, customer behavior">Librairie Lapage — ventes, comportement client</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">🔐</div>
+          <div class="sector-name" data-fr="Sécurité financière" data-en="Financial security">Sécurité financière</div>
+          <div class="sector-context" data-fr="ONCFM — détection de fraude, ML en production" data-en="ONCFM — fraud detection, ML in production">ONCFM — détection de fraude, ML en production</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">🏛️</div>
+          <div class="sector-name" data-fr="Secteur public" data-en="Public sector">Secteur public</div>
+          <div class="sector-context" data-fr="Ministère — données personnelles, FUDPE" data-en="Ministry — personal data, FUDPE">Ministère — données personnelles, FUDPE</div>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">🚀</div>
+          <div class="sector-name" data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</div>
+          <div class="sector-context" data-fr="Accompagnement, orientation, gestion de projets" data-en="Support, guidance, project management">Accompagnement, orientation, gestion de projets</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FORMATION
+  ============================================================ -->
+  <section class="section section-alt" id="formation">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" data-fr="Parcours académique" data-en="Academic background">Parcours académique</span>
+        <h2 class="section-title" data-fr="Formation" data-en="Education">Formation</h2>
+        <p class="section-subtitle" data-fr="Un socle académique solide, construit progressivement de l'informatique générale à la data science avancée." data-en="A solid academic foundation, built progressively from general computing to advanced data science.">
+          Un socle académique solide, construit progressivement de l'informatique générale à la data science avancée.
+        </p>
+      </div>
+      <div class="education-grid">
+        <div class="education-card education-card-featured">
+          <div class="education-year">2024 – 2026</div>
+          <div class="education-degree" data-fr="Formation Data Analyst" data-en="Data Analyst Training">Formation Data Analyst</div>
+          <div class="education-school">CFA Orange × OpenClassrooms</div>
+          <div class="education-location" data-fr="Paris, France · En cours" data-en="Paris, France · Ongoing">Paris, France · En cours</div>
+          <div class="education-tags">
+            <span class="tag">Python</span><span class="tag">SQL</span>
+            <span class="tag">Power BI</span><span class="tag">Machine Learning</span>
+          </div>
+        </div>
+        <div class="education-card">
+          <div class="education-year">2018 – 2020</div>
+          <div class="education-degree" data-fr="Master Business Intelligence & Big Data" data-en="Master Business Intelligence & Big Data">Master Business Intelligence & Big Data</div>
+          <div class="education-school">IAM — Institut Africain de Management</div>
+          <div class="education-location">Dakar, Sénégal</div>
+          <div class="education-tags">
+            <span class="tag">BI</span><span class="tag">Big Data</span><span class="tag">Data Warehouse</span>
+          </div>
+        </div>
+        <div class="education-card">
+          <div class="education-year">2016 – 2017</div>
+          <div class="education-degree" data-fr="Licence Génie Logiciel" data-en="Bachelor Software Engineering">Licence Génie Logiciel</div>
+          <div class="education-school">ESP — École Supérieure Polytechnique</div>
+          <div class="education-location">Dakar, Sénégal</div>
+          <div class="education-tags">
+            <span class="tag">Développement</span><span class="tag">Algorithmique</span>
+          </div>
+        </div>
+        <div class="education-card">
+          <div class="education-year">2014 – 2016</div>
+          <div class="education-degree" data-fr="DUT Informatique" data-en="DUT Computer Science">DUT Informatique</div>
+          <div class="education-school">ESP — École Supérieure Polytechnique</div>
+          <div class="education-location">Dakar, Sénégal</div>
+          <div class="education-tags">
+            <span class="tag">Informatique</span><span class="tag">Réseaux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="section section-white" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label" data-fr="Travaillons ensemble" data-en="Let's work together">Travaillons ensemble</span>
+        <h2 class="section-title" data-fr="Me contacter" data-en="Contact me">Me contacter</h2>
+        <p class="section-subtitle" data-fr="Vous avez un projet data, une opportunité ou simplement envie d'échanger ? Je suis disponible et à l'écoute." data-en="Do you have a data project, an opportunity or simply want to connect? I am available and listening.">
+          Vous avez un projet data, une opportunité ou simplement envie d'échanger ? Je suis disponible et à l'écoute.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="mailto:salamoumou097@gmail.com" class="contact-card">
+            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-card-content">
+              <div class="contact-card-label" data-fr="Email" data-en="Email">Email</div>
+              <div class="contact-card-value">salamoumou097@gmail.com</div>
+            </div>
+            <i class="fas fa-arrow-right contact-card-arrow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/oumou-salam-kane-b159101b4/" target="_blank" class="contact-card">
+            <div class="contact-card-icon contact-card-icon-linkedin"><i class="fab fa-linkedin-in"></i></div>
+            <div class="contact-card-content">
+              <div class="contact-card-label">LinkedIn</div>
+              <div class="contact-card-value">Oumou Salam KANE</div>
+            </div>
+            <i class="fas fa-arrow-right contact-card-arrow"></i>
+          </a>
+          <a href="CV_OumouSalamKANE.pdf" download class="btn btn-secondary contact-card" style="justify-content:center;" target="_blank">
+            <div class="contact-card-icon contact-card-icon-github"><i class="fab fa-github"></i></div>
+            <div class="contact-card-content">
+              <div class="contact-card-label">GitHub</div>
+              <div class="contact-card-value">github.com/Oumouu</div>
+            </div>
+            <i class="fas fa-arrow-right contact-card-arrow"></i>
+          </a>
+          <div class="contact-card contact-card-location">
+            <div class="contact-card-icon contact-card-icon-location"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-card-content">
+              <div class="contact-card-label" data-fr="Localisation" data-en="Location">Localisation</div>
+              <div class="contact-card-value" data-fr="Paris, Île-de-France" data-en="Paris, Île-de-France">Paris, Île-de-France</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta-box">
+          <div class="contact-cta-inner">
+            <div class="contact-cta-icon">💼</div>
+            <h3 data-fr="Prête pour de nouveaux défis" data-en="Ready for new challenges">Prête pour de nouveaux défis</h3>
+            <p data-fr="Alternante chez Orange, je reste ouverte aux opportunités de collaboration, aux projets data innovants et aux échanges professionnels enrichissants." data-en="Currently apprenticing at Orange, I remain open to collaboration opportunities, innovative data projects and enriching professional exchanges.">
+              Alternante chez Orange, je reste ouverte aux opportunités de collaboration, aux projets data innovants et aux échanges professionnels enrichissants.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:24px;">
+              <a href="mailto:salamoumou097@gmail.com" class="btn btn-primary" style="justify-content:center;">
+                <i class="fas fa-envelope"></i>
+                <span data-fr="Envoyer un message" data-en="Send a message">Envoyer un message</span>
+              </a>
+              <a href="CV_OumouSalamKANE.pdf" download class="btn btn-secondary" style="justify-content:center;">
+                <i class="fas fa-download"></i>
+                <span data-fr="Télécharger mon CV" data-en="Download my CV">Télécharger mon CV</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">OSK <span>·</span> Data</span>
+          <p class="footer-tagline" data-fr="Data Analyst · Business Intelligence · Machine Learning" data-en="Data Analyst · Business Intelligence · Machine Learning">
+            Data Analyst · Business Intelligence · Machine Learning
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
+          <a href="#apropos" data-fr="À propos" data-en="About">À propos</a>
+          <a href="#projets" data-fr="Projets" data-en="Projects">Projets</a>
+          <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/oumou-salam-kane-b159101b4/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Oumouu" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:salamoumou097@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-fr="© 2025 Oumou Salam KANE — Tous droits réservés" data-en="© 2025 Oumou Salam KANE — All rights reserved">
+          © 2025 Oumou Salam KANE — Tous droits réservés
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CSS PARTIE 2
+  ============================================================ -->
+  <style>
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .skill-category {
+      background: var(--color-bg);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+    }
+
+    .skill-category:hover {
+      border-color: rgba(0,113,227,0.15);
+      background: var(--color-white);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .skill-category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .skill-category-icon {
+      font-size: 1.4rem;
+    }
+
+    .skill-category-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 980px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      background: var(--color-white);
+      color: var(--color-text-secondary);
+      border: 1.5px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .skill-tag:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .skill-tag-primary {
+      background: rgba(0,113,227,0.08);
+      color: var(--color-accent);
+      border-color: rgba(0,113,227,0.2);
+      font-weight: 600;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      border: 1.5px solid var(--color-border);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .project-card:hover {
+      border-color: rgba(0,113,227,0.3);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-6px);
+    }
+
+    .project-card-featured {
+      border-color: rgba(0,113,227,0.2);
+      background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+    }
+
+    .project-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-icon {
+      font-size: 1.5rem;
+    }
+
+    .project-sector {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.3;
+    }
+
+    .project-client {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .project-result {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    .project-result i {
+      color: var(--color-accent);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .project-result-highlight {
+      background: rgba(0,113,227,0.08);
+      color: var(--color-accent);
+    }
+
+    .project-result-highlight i {
+      color: #f5a623;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .project-cta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-top: 4px;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-cta {
+      gap: 10px;
+    }
+
+    /* MODALS */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 40px;
+      max-width: 580px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+      animation: modalIn 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: var(--color-border);
+      color: var(--color-text);
+    }
+
+    .modal-icon { font-size: 2rem; margin-bottom: 8px; }
+
+    .modal-sector {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .modal-client {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .modal-body { display: flex; flex-direction: column; gap: 20px; }
+
+    .modal-section h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .modal-section p {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .modal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .modal-list li {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .modal-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 8px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* SECTORS */
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .sector-card {
+      background: var(--color-bg);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+    }
+
+    .sector-card:hover {
+      border-color: rgba(0,113,227,0.2);
+      background: var(--color-white);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .sector-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .sector-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .sector-context {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* EDUCATION */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .education-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1.5px solid var(--color-border);
+      transition: var(--transition);
+    }
+
+    .education-card:hover {
+      border-color: rgba(0,113,227,0.2);
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .education-card-featured {
+      border-color: rgba(0,113,227,0.25);
+      background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+    }
+
+    .education-year {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .education-degree {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .education-school {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .education-location {
+      font-size: 0.78rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .education-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .contact-card:hover {
+      border-color: rgba(0,113,227,0.2);
+      background: var(--color-white);
+      box-shadow: var(--shadow);
+      transform: translateX(4px);
+      color: var(--color-text);
+    }
+
+    .contact-card-location {
+      cursor: default;
+    }
+
+    .contact-card-location:hover {
+      transform: none;
+    }
+
+    .contact-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(0,113,227,0.1);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-card-icon-linkedin { background: rgba(0,119,181,0.1); color: #0077b5; }
+    .contact-card-icon-github { background: rgba(36,41,47,0.08); color: #24292f; }
+    .contact-card-icon-location { background: rgba(255,59,48,0.08); color: #ff3b30; }
+
+    .contact-card-content { flex: 1; }
+
+    .contact-card-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-secondary);
+      margin-bottom: 2px;
+    }
+
+    .contact-card-value {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .contact-card-arrow {
+      color: var(--color-text-secondary);
+      font-size: 0.8rem;
+      transition: var(--transition);
+    }
+
+    .contact-card:hover .contact-card-arrow {
+      color: var(--color-accent);
+      transform: translateX(3px);
+    }
+
+    .contact-cta-box {
+      background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      border: 1.5px solid rgba(0,113,227,0.15);
+      text-align: center;
+    }
+
+    .contact-cta-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+    .contact-cta-icon { font-size: 2.5rem; }
+
+    .contact-cta-inner h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .contact-cta-inner p {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--color-text);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 24px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .footer-logo span { color: var(--color-accent); }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover { color: #fff; }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--color-accent);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* RESPONSIVE PARTIE 2 */
+    @media (max-width: 1024px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .sectors-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+      .education-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .sectors-grid { grid-template-columns: 1fr 1fr; }
+      .modal-box { padding: 28px 20px; }
+    }
+  </style>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── Navigation mobile ──────────────────────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('open'));
+    });
+
+    // ── Navbar scroll shadow ───────────────────────────────────
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 20) {
+        navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
+    });
+
+    // ── Modals ─────────────────────────────────────────────────
+    function openModal(id) {
+      document.getElementById(id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOutside(event, id) {
+      if (event.target === document.getElementById(id)) {
+        closeModal(id);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.open').forEach(m => {
+          m.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+
+    // ── Langue FR / EN ─────────────────────────────────────────
+    let currentLang = 'fr';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('btnFR').classList.toggle('active', lang === 'fr');
+      document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+
+    // ── Intersection Observer (animations au scroll) ───────────
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(
+      '.timeline-card, .project-card, .skill-category, .sector-card, .education-card, .contact-card'
+    ).forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+
+    // ── Active nav link au scroll ──────────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-menu a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === '#' + current) {
+          link.style.color = 'var(--color-text)';
+          link.style.fontWeight = '600';
+        } else {
+          link.style.fontWeight = '500';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
