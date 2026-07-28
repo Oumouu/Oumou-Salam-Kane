@@ -3,7 +3,7 @@
 Portfolio professionnel (BI, Data, Python & Machine Learning) publié sur **GitHub Pages**.
 
 ## Links
-- **Portfolio (GitHub Pages)** : (à compléter si besoin)
+- **Portfolio (GitHub Pages)**
 - **LinkedIn** : https://www.linkedin.com/in/oumou-salam-kane-b159101b4/
 - **GitHub** : https://github.com/Oumouu
 - **CV (PDF)** : https://raw.githubusercontent.com/Oumouu/Oumou-Salam-Kane/main/CV__OumouSalamKANE.pdf
