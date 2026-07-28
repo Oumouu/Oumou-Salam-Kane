@@ -6,7 +6,7 @@ Portfolio professionnel (BI, Data, Python & Machine Learning) publié sur **GitH
 -  **Portfolio (GitHub Pages)** : https://oumouu.github.io/Oumou-Salam-Kane/
 - **LinkedIn** : https://www.linkedin.com/in/oumou-salam-kane-b159101b4/
 - **GitHub** : https://github.com/Oumouu
-- **CV (PDF)** : https://raw.githubusercontent.com/Oumouu/Oumou-Salam-Kane/main/CV__Oumou%20Salam_KANE.pdf
+- **CV (PDF)** : https://raw.githubusercontent.com/Oumouu/Oumou-Salam-Kane/main/CV_OumouSalamKANE.pdf
 
 ## What you’ll find
 - **Projets** : chaîne data de bout en bout (EDA, SQL, BI Power BI, statistiques, ML, évaluation et déploiement)
